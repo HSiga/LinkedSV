@@ -28,6 +28,7 @@ class global_parameter:
 
         self.min_mapq = 20
         self.n_thread = parser_args.n_thread
+        self.n_memory = parser_args.n_memory
 
         self.samtools = parser_args.samtools
         self.bedtools = parser_args.bedtools
@@ -297,6 +298,7 @@ def parse_user_arguments():
     parser.add_argument('--gap_region_bed', required = False, metavar = 'BED', type = str, default = '', help ='reference gap region in bed format, required if --ref_version is not specified')
     parser.add_argument('--black_region_bed', required = False, metavar = 'BED', type = str, default = '', help ='black region in bed format, required if --ref_version is not specified')
     parser.add_argument('-t', '--n_thread', required = False, metavar = 'num_thread', type = int, default = 1, help ='number of threads (default: 4)')
+    parser.add_argument('-m', '--n_memory', required = False, metavar = 'num_memory', type = int, default = 1, help ='number of memory GB available per thread (default: 1)')
     parser.add_argument('--min_fragment_length', metavar = 'INT', required = False, type = int, default = -1, help ='minimal fragment length considered for SV calling')
     parser.add_argument('--min_reads_in_fragment', metavar = 'INT', required = False, type = int, default = -1, help ='minimal number of confidently mapped reads in one fragment')
     parser.add_argument('--min_supp_barcodes', metavar = 'INT', required = False, type = int, default = 10, help ='minimal number of shared barcodes between two SV breakpoints (default: 10)')

@@ -72,7 +72,7 @@ sh build.sh
 ```
 usage: linkedsv.py [-h] -i input.phased_possorted_bam.bam -d output_directory
                    -r ref.fa [-v version] [--gap_region_bed BED]
-                   [--black_region_bed BED] [-t num_thread]
+                   [--black_region_bed BED] [-t num_thread] [-m memory_per_thread]
                    [--min_fragment_length INT] [--min_reads_in_fragment INT]
                    [--min_supp_barcodes INT] [--samtools path/to/samtools]
                    [--bedtools path/to/bedtools] [--wgs] [--targeted]

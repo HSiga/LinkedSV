@@ -228,7 +228,7 @@ def extract_barcode_from_bam (args, endpoint_args):
     
     ## sort bam by barcode ##
 
-    cmd = '%s %s | %s sort -l 1 -m 1G -@ %d -t BX -o %s -' % (args.output_bam_coreinfo, args.bam, args.samtools, args.n_thread, args.sortbx_bam)
+    cmd = '%s %s | %s sort -l 1 -m %dG -@ %d -t BX -o %s -' % (args.output_bam_coreinfo, args.bam, args.samtools, args.n_memory, args.n_thread, args.sortbx_bam)
 
     if (args.run_from_begining == False) and my_utils.check_file_exists(args.sortbx_bam):
         my_utils.myprint('File: %s existed, skipped sorting bam by barcode' % args.sortbx_bam)
